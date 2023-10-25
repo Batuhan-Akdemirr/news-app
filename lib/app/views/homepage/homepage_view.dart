@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
                   "More details emerge after off-duty pilot allegedly tried to shut off engines on Alaska Airlines flight - ABC News",
               url:
                   "https://abcnews.go.com/US/details-emerge-after-off-duty-pilot-allegedly-shut/story?id=104247388",
+                  urlToImage: "https://i.abcnewsfe.com/a/606634e1-3cb9-49a5-9e7f-72fbfdb763a1/Joe-Emerson-1-ht-gmh-231023_1698091765899_hpMain_16x9.jpg?w=992"
       )),
     );
   }

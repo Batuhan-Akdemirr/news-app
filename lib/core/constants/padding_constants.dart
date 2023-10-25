@@ -44,7 +44,7 @@ class PaddingConstants {
   final EdgeInsets generalHighHorizontalPadding =
       EdgeInsets.symmetric(horizontal: 16.w);
   final EdgeInsets generalHighVerticalPadding =
-      EdgeInsets.symmetric(horizontal: 16.h);
+      EdgeInsets.symmetric(vertical: 16.h);
 
   
   
