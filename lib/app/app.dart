@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/app/views/homepage/homepage_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -7,10 +8,16 @@ class App extends StatelessWidget {
   final String appTitle = "News App";
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: appTitle,
-      home:  HomePage(),
-      debugShowCheckedModeBanner: false,
+    return ScreenUtilInit(
+      minTextAdapt: true,
+      designSize: const Size(430, 932),
+      builder: (context, child) {
+        return MaterialApp(
+          title: appTitle,
+          home: HomePage(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }

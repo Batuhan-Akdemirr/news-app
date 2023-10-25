@@ -17,11 +17,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: FloatingActionButton(
-        onPressed: () {
-          apiService.getArticle(SupportedLanguages.us.name);
-        },
-      ),
+     
     );
   }
 }
