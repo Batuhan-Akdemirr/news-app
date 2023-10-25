@@ -9,7 +9,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: appTitle,
-      home: const HomePage(),
+      home:  HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
