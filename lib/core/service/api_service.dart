@@ -9,7 +9,7 @@ class ApiService implements IApiService {
 
   Future<List<Article>> getArticle(String languages) async {
     final String  endPointUrl =
-        "http://newsapi.org/v2/top-headlines?country=$languages&category=health&apiKey=$APIKEY";
+        "http://newsapi.org/v2/top-headlines?country=$languages&category=business&apiKey=$APIKEY";
 
     try {
       Response res = await _dio.get(endPointUrl);
