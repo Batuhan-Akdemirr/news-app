@@ -31,5 +31,6 @@ flutter:
 
   assets:
     - assets/placeholder.jpeg
+    - assets/flags/
 
   
