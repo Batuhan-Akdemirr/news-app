@@ -14,4 +14,6 @@ class ColorConstants {
   final Color black = Colors.black;
   final Color black12 = Colors.black12;
   final Color red = Colors.red;
+  final Color transparent = Colors.transparent;
+  final Color blue = Colors.blue;
 }
