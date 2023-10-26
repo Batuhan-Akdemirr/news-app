@@ -4,11 +4,13 @@ import 'package:news_application/core/constants/padding_constants.dart';
 import 'package:news_application/core/constants/radius_constants.dart';
 import 'package:news_application/core/models/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_application/core/widgets/base_news_image.dart';
 
 class BaseNewsComponent extends StatelessWidget {
   BaseNewsComponent({
     super.key,
-    required this.article, required this.isDetailView,
+    required this.article,
+    required this.isDetailView,
   });
   final double componentheight = 200.h;
   final String placeHolder = "assets/placeholder.jpeg";
@@ -21,19 +23,8 @@ class BaseNewsComponent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: componentheight,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: article.urlToImage != null
-                  ? NetworkImage(article.urlToImage!)
-                  : AssetImage(placeHolder) as ImageProvider,
-              fit: BoxFit.cover,
-            ),
-            borderRadius:
-                BorderRadius.circular(RadiusConstants.instance.normal),
-          ),
+        BaseNewsImage(
+          article: article,
         ),
         Padding(
           padding: PaddingConstants.instance.generalLowTopPadding,

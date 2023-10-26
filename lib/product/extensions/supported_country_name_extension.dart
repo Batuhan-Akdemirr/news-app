@@ -1,12 +1,12 @@
 
 
-import 'package:news_application/core/enums/SupportedCountries.dart';
+import 'package:news_application/product/enums/supported_countries.dart';
 
 extension SupportedCountryNameExtension on SupportedCountries {
   String get countryName {
     switch (this) {
       case SupportedCountries.ar:
-        return 'Argentina'; // Ülke adını ekleyin
+        return 'Argentina'; 
       case SupportedCountries.de:
         return 'Germany';
       case SupportedCountries.fr:

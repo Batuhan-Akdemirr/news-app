@@ -4,6 +4,8 @@ import 'package:news_application/core/constants/padding_constants.dart';
 import 'package:news_application/core/models/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_application/core/widgets/base_news_component.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 class NewsDetailView extends StatelessWidget {
   NewsDetailView({super.key, required this.article});
@@ -16,6 +18,7 @@ class NewsDetailView extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: ColorConstants.instance.black),
         backgroundColor: ColorConstants.instance.white,
+        centerTitle: true,
         elevation: 0,
         title: Text(
           article.title ?? "",
@@ -27,7 +30,22 @@ class NewsDetailView extends StatelessWidget {
       body: Padding(
           padding: PaddingConstants.instance.generalHighHorizontalPadding +
               PaddingConstants.instance.generalHighVerticalPadding,
-          child: BaseNewsComponent(article: article, isDetailView: true)),
+          child: Column(
+            children: [
+              BaseNewsComponent(article: article, isDetailView: true),
+              Padding(
+                  padding: PaddingConstants.instance.generalHighTopPadding * 2,
+                  child: article.url != null ? Linkify(
+                    onOpen: (link) async {
+                      if (!await launchUrl(Uri.parse(link.url))) {
+                        throw Exception('Could not launch ${link.url}');
+                      }
+                    },
+                    text: article.url!,
+                    linkStyle: TextStyle(color: ColorConstants.instance.blue),
+                  ) : const SizedBox.shrink())
+            ],
+          )),
     );
   }
 }

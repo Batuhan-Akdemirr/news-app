@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           title: appTitle,
-          home: HomePage(),
+          home: const HomePage(),
           debugShowCheckedModeBanner: false,
         );
       },

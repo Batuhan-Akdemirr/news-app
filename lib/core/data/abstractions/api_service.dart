@@ -1,5 +1,4 @@
 abstract class IApiService {
-  getArticle({required String languages});
-    getArticle2(
+  getArticle(
       {required String languages, required int page, required int limit});
 }
